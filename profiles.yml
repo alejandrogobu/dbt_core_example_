@@ -1,0 +1,21 @@
+dbt_alsa:
+  target: dev
+  outputs:
+
+    dev:
+      type: bigquery
+      method: oauth
+      project: civ-alsa-bronze-dev
+      execution_project: civ-alsa-compute-dev
+      dataset: alsa
+      location: europe-southwest1
+      threads: 4
+
+    pre:
+      type: bigquery
+      method: oauth
+      project: civ-alsa-bronze-dev
+      execution_project: civ-alsa-compute-pre
+      dataset: alsa
+      location: europe-southwest1
+      threads: 4

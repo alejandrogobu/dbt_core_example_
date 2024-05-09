@@ -1,0 +1,30 @@
+version: 2
+
+sources:
+  - name: production  # Cambia esto por el nombre de tu source
+    database: "civ-alsa-bronze-{{target.name}}"  # Nombre de la base de datos en BigQuery
+    schema: PRODUCTION  # Esquema donde reside la tabla
+    quoting:
+      database: false
+      schema: false
+      identifier: false
+    tables:
+      - name: BRANDS  # Cambia esto por el nombre real de tu tabla
+        description: "Descripción de la tabla."  # Una breve descripción de lo que representa la tabla
+        columns:
+          - name: BRAND_ID
+            description: "Identificador único para cada marca."
+            data_type: bigint
+            tests:
+              - unique
+              - not_null
+          - name: BRAND_NAME
+            description: "Nombre de la marca."
+            data_type: string
+          - name: _FIVETRAN_DELETED
+            description: "Indica si el registro fue eliminado por Fivetran durante la sincronización."
+            data_type: boolean
+          - name: _FIVETRAN_SYNCED
+            description: "Timestamp de cuando Fivetran sincronizó este registro por última vez."
+            data_type: timestamp
+ 
