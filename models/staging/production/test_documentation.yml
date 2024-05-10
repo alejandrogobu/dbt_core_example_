@@ -1,0 +1,22 @@
+models:
+  - name: base_production_BRANDS
+    description: |
+      is a unique va
+    columns:
+      - name: BRAND_ID
+        description: test_
+        data_type: BIGNUMERIC
+        test:
+          - unique
+        tests:
+          - not_null
+          - unique
+      - name: BRAND_NAME
+        description: test
+        data_type: STRING
+      - name: _FIVETRAN_DELETED
+        description: test
+        data_type: BOOLEAN
+      - name: _FIVETRAN_SYNCED
+        description: test
+        data_type: TIMESTAMP
