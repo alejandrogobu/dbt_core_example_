@@ -6,3 +6,5 @@ venv/
 .venv/
 .vscode
 .user.yml
+requeriments.txt
+airflow/
